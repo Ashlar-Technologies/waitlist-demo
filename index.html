@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <div class="loading-indicator">
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <header class="flex">
         <h1>Tydi<span>zen</span></h1>
         <a href="#waitlist">Join Us</a>
@@ -128,5 +135,33 @@
 
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    window.onload = () => {
+        const loader = document.getElementsByClassName("loading-indicator");
+        loader[0].style.display = "none";
+
+        const inputs = document.querySelectorAll(".form-group input");    
+        for (let index = 0; index < inputs.length; index++) {
+            const input = inputs[index];
+    
+            input.addEventListener("keydown", (event) => {
+                const errorText = input.nextElementSibling;
+                errorText.innerHTML = '';
+            })
+        }
+
+        const btn = document.querySelector(".subscription-form button");
+        btn.addEventListener("click", function (event) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Great, you will be informed as soon as Tydizen goes live!!',
+                icon: 'success',
+                confirmButtonColor: "#01A887"
+            });
+        })
+    }
+
+</script>
 
 </html>
