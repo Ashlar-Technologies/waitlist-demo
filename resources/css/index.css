@@ -48,6 +48,8 @@ header a {
     padding: 0.5rem 2rem;
     background-color: var(--primary-accent-color);
     border-radius: var(--size);
+    color: black;
+    font-weight: 500;
 }
 
 section {
