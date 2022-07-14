@@ -71,6 +71,10 @@ section {
     color: var(--secondary-text-color);
 }
 
+.container:nth-child(even) .text{
+    color: black;
+}
+
 .card {
     text-align: center;
     background-color: white;
