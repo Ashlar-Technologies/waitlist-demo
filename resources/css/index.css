@@ -227,10 +227,13 @@ section#waitlist {
     }
 
     .sdg-holder {
-        width: 60%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+    }
+
+    .sdg-holder img {
+        max-width: 50%;
+        padding: 1rem;
     }
 
     .overlapped-item {
