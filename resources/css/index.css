@@ -216,6 +216,10 @@ section#waitlist {
         height: auto;
     }
 
+    .card {
+        margin: 2rem 1rem;
+    }
+
     .container {
         flex-direction: column-reverse;
         padding: 1rem;
