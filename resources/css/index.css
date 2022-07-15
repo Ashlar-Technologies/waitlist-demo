@@ -51,7 +51,7 @@ header a {
 }
 
 section {
-    height: 800px;
+    height: 700px;
     padding: 2rem 8rem;
 }
 
@@ -110,6 +110,11 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+/* .container-image img{
+    height: 80%;
+    width: auto;
+} */
 
 ul.list {
     margin: 2rem;
@@ -393,6 +398,6 @@ section#waitlist {
 
 
 .flex .image {
-    max-width: 100%;
-    height: auto;
+   height: 100%;
+    width: auto;
 }
