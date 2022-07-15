@@ -374,6 +374,10 @@ section#waitlist {
 }
 
 @media screen and (max-width: 650px) {
+    #reason {
+        padding: 1rem;
+    }
+    
     section {
         padding: 2.5rem;
     }
