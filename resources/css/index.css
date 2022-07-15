@@ -49,23 +49,23 @@ header a {
 }
 
 section {
-    min-height: calc(100vh - 80px);
-    padding: 0 8rem;
+    min-height: calc(90vh - 80px);
+    padding: 2rem 8rem;
 }
 
 .title {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .subtitle {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 2rem 0;
     color: var(--secondary-text-color);
 }
@@ -115,7 +115,7 @@ ul.list {
 
 ul.list li {
     padding: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .sdg-holder {
@@ -277,10 +277,6 @@ section#waitlist {
 }
 
 @media only screen and (max-width: 1000px) {
-    html {
-        font-size: 14px;
-    }
-
     section {
         height: auto;
         /* padding: 2.5rem; */
@@ -375,6 +371,11 @@ section#waitlist {
 @media screen and (max-width: 650px) {
     section {
         padding: 2.5rem;
+    }
+
+    .container-image {
+        justify-content: center;
+        align-items: center;
     }
 }
 
