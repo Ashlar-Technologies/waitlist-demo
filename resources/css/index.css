@@ -378,36 +378,7 @@ section#waitlist {
 }
 
 
-
-
-
-/* 
-.flex.container > div:first-child {
-    flex-shrink: 1;
-}
-
-.flex.container > div:last-child {
-    flex-shrink: 2;
-} */
-
-/* .flex {
-    display: flex;
-}
-
-.center {
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-center {
-    justify-content: center;
-} */
-
 .flex .image {
     max-width: 100%;
     height: auto;
 }
-
-/* .flex-axis-vertical {
-    flex-direction: column;
-} */
