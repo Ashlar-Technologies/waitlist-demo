@@ -345,6 +345,10 @@ section#waitlist {
         width: unset;
     }
 
+    #reason {
+        padding: 1rem;
+    }
+
     .overlapped-item {
         display: block;
     }
