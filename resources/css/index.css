@@ -112,7 +112,6 @@ section {
 
 ul.list {
     margin: 2rem;
-    color: green;
 }
 
 ul.list li {
@@ -278,6 +277,10 @@ section#waitlist {
 }
 
 @media only screen and (max-width: 1000px) {
+    header {
+        padding: 1rem;
+    }
+
     section {
         height: auto;
     }
