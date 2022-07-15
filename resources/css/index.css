@@ -112,6 +112,7 @@ section {
 
 ul.list {
     margin: 2rem;
+    color: red;
 }
 
 ul.list li {
@@ -295,7 +296,6 @@ section#waitlist {
 
     ul.list {
         margin: 1rem 2rem;
-        color: red;
     }
     
     ul.list li {
