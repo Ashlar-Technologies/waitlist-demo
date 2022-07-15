@@ -270,19 +270,13 @@ section#waitlist {
         background-color: #01A887;
     }
 }
-/* @media only screen and (max-width: 1120px) {
-    section {
-        padding: 0 4rem;
-    }
-
-} */
 
 @media only screen and (max-width: 1000px) {
     section {
         height: auto;
     }
 
-    /* .title {
+    .title {
         font-size: 2rem;
     }
 
@@ -291,12 +285,12 @@ section#waitlist {
     }
     
     .text {
-        font-size: 1.2rem;
-        margin: 2rem 0;
-    } */
+        font-size: 1rem;
+    }
 
     ul.list {
         margin: 1rem 2rem;
+        color: blue;
     }
     
     ul.list li {
@@ -305,11 +299,16 @@ section#waitlist {
     }    
 
     .card {
-        margin: 2rem 1rem;
+        margin: 2rem 0.5rem;
+        padding: 2rem 1rem;
     }
 
     .container {
         flex-direction: column-reverse;
+    }
+
+    .container-image .image {
+        padding: 2rem;
     }
     
     .container > div {
@@ -353,6 +352,7 @@ section#waitlist {
         transform: translateX(0%);
         width: 100%;
         margin-top: 1rem;
+        padding: 2rem 1rem;
     }
 
     .subscription-form {
