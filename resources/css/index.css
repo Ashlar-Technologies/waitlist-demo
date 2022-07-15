@@ -55,18 +55,19 @@ section {
 
 .title {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 .subtitle {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .text {
-    font-size: 1.2rem;
-    margin: 2rem 0;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--secondary-text-color);
 }
 
@@ -269,20 +270,19 @@ section#waitlist {
         background-color: #01A887;
     }
 }
-@media only screen and (max-width: 1120px) {
+/* @media only screen and (max-width: 1120px) {
     section {
         padding: 0 4rem;
     }
 
-}
+} */
 
 @media only screen and (max-width: 1000px) {
     section {
         height: auto;
-        /* padding: 2.5rem; */
     }
 
-    .title {
+    /* .title {
         font-size: 2rem;
     }
 
@@ -293,7 +293,7 @@ section#waitlist {
     .text {
         font-size: 1.2rem;
         margin: 2rem 0;
-    }
+    } */
 
     ul.list {
         margin: 1rem 2rem;
@@ -363,9 +363,7 @@ section#waitlist {
         padding: 0.5rem 0rem;
     }
 
-    .title {
-        text-align: center;
-    }
+
 }
 
 @media screen and (max-width: 650px) {
