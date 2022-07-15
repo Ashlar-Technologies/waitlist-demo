@@ -2,9 +2,6 @@
 
 :root {
     --size: 8px;
-
-    --fontsize: calc(var(--size) * 2);
-
     --secondary-color: #051F38;
     --primary-color: #01A887;
     --primary-accent-color: #73FF73;
@@ -22,9 +19,8 @@
     box-sizing: border-box;
 }
 
-
 html {
-    font-size: var(--fontsize);
+    font-size: 16px;
 }
 
 header {
@@ -47,13 +43,14 @@ header h1 span {
 header a {
     padding: 0.5rem 2rem;
     background-color: var(--primary-accent-color);
-    border-radius: var(--size);
+    border-radius: 0.5rem;
     color: black;
     font-weight: 500;
 }
 
 section {
     min-height: calc(100vh - 80px);
+    padding: 0 8rem;
 }
 
 .title {
@@ -89,7 +86,7 @@ section {
 .container {
     display: flex;
     align-items: center;
-    padding: 0 6rem;
+    /* padding: 0 6rem; */
 }
 
 .container:nth-child(even) {
@@ -272,15 +269,44 @@ section#waitlist {
         background-color: #01A887;
     }
 }
+@media only screen and (max-width: 1120px) {
+    section {
+        padding: 0 4rem;
+    }
+
+}
 
 @media only screen and (max-width: 1000px) {
     html {
-        font-size: calc(var(--fontsize) * 0.9);
+        font-size: 14px;
     }
 
     section {
         height: auto;
+        /* padding: 2.5rem; */
     }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .text {
+        font-size: 1.2rem;
+        margin: 2rem 0;
+    }
+
+    ul.list {
+        margin: 1rem 2rem;
+    }
+    
+    ul.list li {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }    
 
     .card {
         margin: 2rem 1rem;
@@ -288,12 +314,20 @@ section#waitlist {
 
     .container {
         flex-direction: column-reverse;
-        padding: 1rem;
     }
     
     .container > div {
         width: 100%;
         align-items: center;
+        padding: 2rem 0;
+    }
+
+    #waitlist {
+        padding: 1rem;
+    }
+
+    #reason {
+        padding: 2.5rem 1rem;
     }
 
     .sdg-holder {
@@ -335,6 +369,12 @@ section#waitlist {
 
     .title {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    section {
+        padding: 2.5rem;
     }
 }
 
