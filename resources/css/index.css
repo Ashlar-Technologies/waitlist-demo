@@ -111,10 +111,10 @@ section {
     /* align-items: center; */
 }
 
-/* .container-image img{
-    height: 80%;
-    width: auto;
-} */
+.container-image img{
+    height: auto;
+    max-width: 100%;
+}
 
 ul.list {
     margin: 2rem;
