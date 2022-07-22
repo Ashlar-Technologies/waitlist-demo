@@ -144,6 +144,12 @@ ul.list li {
     border-radius: calc(var(--size) * 7);
 }
 
+.bg-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: calc(var(--size) * 7);
+}
+
 .overlapped-item {
     width: 100%;
     height: 100%;
@@ -364,11 +370,6 @@ section#waitlist {
     .overlapped-item>div:first-child {
         height: 35vw;
         width: 100%;
-    }
-
-    .overlapped-item>div:first-child img {
-        width: 100%;
-        height: 100%;
     }
 
     .overlapped-item>div:last-child {
