@@ -166,7 +166,8 @@ ul.list li {
 .overlapped-item>div:last-child {
     position: relative;
     background-color: white;
-    width: 70%;
+    width: 100%;
+    margin: 0 20%;
     padding: 2rem;
     border-radius: calc(var(--size) * 4);
     box-shadow: 0 4px 40px #0000001a;
