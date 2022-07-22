@@ -359,12 +359,13 @@ section#waitlist {
     #reason {
         padding: 0 0 2rem;
     }
-
+    
     .bg-image {
         width: 100%;
+        border-radius: 0;
     }
 
-    .bg-image {
+    .bg-image img {
         border-radius: 0;
     }
 
