@@ -71,12 +71,15 @@
                 <div>
                     <h1 class="title">Why it matters</h1>
                     <p class="text">
-                        Ghana’s improved sanitation coverage has not exceeded 15% in a long time. 
-                        This means only 15 in every 100 Ghanaians have access to sanitation facilities and services. 
-                        Based on this statistic, what we are experiencing with regards to sanitation and waste management 
-                        is justified but the consequences on us is too dire to ignore. We don’t have the luxury of waiting 
-                        until everything comes together for us to reverse this trend. Let’s reverse the trend by 
-                        using resources currently at our disposal beginning with the ones highly overlooked, like, our concern for the environment.
+                        Ghana’s improved sanitation coverage has not exceeded 15% in a long time.
+                        This means only 15 in every 100 Ghanaians have access to sanitation facilities and services.
+                        Based on this statistic, what we are experiencing with regards to sanitation and waste
+                        management
+                        is justified but the consequences on us is too dire to ignore. We don’t have the luxury of
+                        waiting
+                        until everything comes together for us to reverse this trend. Let’s reverse the trend by
+                        using resources currently at our disposal beginning with the ones highly overlooked, like, our
+                        concern for the environment.
                     </p>
                 </div>
             </div>
@@ -85,11 +88,13 @@
             <div class="container-text flex flex-axis-vertical flex-center">
                 <h1 class="title">The Solution</h1>
                 <p class="text">
-                    You have a responsibility of keeping your environment clean but lack the power to decide how it should be treated by 
-                    others yet that doesn’t prevent you from suffering the consequences of an ill-treated environment. 
+                    You have a responsibility of keeping your environment clean but lack the power to decide how it
+                    should be treated by
+                    others yet that doesn’t prevent you from suffering the consequences of an ill-treated environment.
                     <br>
                     <br>
-                    The solution is YOU, but we also know that you can’t do much without your tools so Tydizen is here to provide you with all the tools.
+                    The solution is YOU, but we also know that you can’t do much without your tools so Tydizen is here
+                    to provide you with all the tools.
                 </p>
             </div>
             <div class="container-image flex flex-center">
@@ -103,11 +108,13 @@
             <div class="container-text flex flex-axis-vertical flex-center">
                 <h1 class="title">How it will work</h1>
                 <p class="text">
-                    Tydizen will give you the power to be able to decide how your environment is treated. 
+                    Tydizen will give you the power to be able to decide how your environment is treated.
                     <br>
                     <br>
-                    When you use that power well, it will reward you with the ability to have your voice heard with regards to 
-                    environment and sanitation, and when your positive impact becomes so enormous that it cannot be ignored, the next reward will be even more fulfilling.
+                    When you use that power well, it will reward you with the ability to have your voice heard with
+                    regards to
+                    environment and sanitation, and when your positive impact becomes so enormous that it cannot be
+                    ignored, the next reward will be even more fulfilling.
                 </p>
             </div>
         </section>
@@ -116,17 +123,17 @@
                 <h1 class="title">Become a Tydizen</h1>
                 <p class="text">
                     <span class="subtitle">Join the waiting list</span><br>
-                    For the power that will compliment and help you actualize your 
-                    responsibilities to your environment. Power that will empower you to be able to decide 
+                    For the power that will compliment and help you actualize your
+                    responsibilities to your environment. Power that will empower you to be able to decide
                     with effectiveness what happens to your environment.
                 </p>
                 <div class="subscription-form">
                     <div class="form-group">
-                        <input placeholder="Enter your name" name="name">
+                        <input placeholder="Enter your name" name="name" value="">
                         <p></p>
                     </div>
                     <div class="form-group">
-                        <input placeholder="Enter your email" name="email">
+                        <input placeholder="Enter your email" type="email" name="email" value="">
                         <p></p>
                     </div>
                     <div class="form-group">
@@ -141,13 +148,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     window.onload = () => {
+        let hasError = true;
         const loader = document.getElementsByClassName("loading-indicator");
         loader[0].style.display = "none";
 
-        const inputs = document.querySelectorAll(".form-group input");    
+        const inputs = document.querySelectorAll(".form-group input");
         for (let index = 0; index < inputs.length; index++) {
             const input = inputs[index];
-    
+
             input.addEventListener("keydown", (event) => {
                 const errorText = input.nextElementSibling;
                 errorText.innerHTML = '';
@@ -156,12 +164,60 @@
 
         const btn = document.querySelector(".subscription-form button");
         btn.addEventListener("click", function (event) {
-            Swal.fire({
-                title: 'Success!',
-                text: 'Great, you will be informed as soon as Tydizen goes live!!',
-                icon: 'success',
-                confirmButtonColor: "#01A887"
-            });
+            // Sorry for the code smells, I'm in a hurry
+            for (let index = 0; index < inputs.length; index++) {
+                const input = inputs[index];
+                const errorText = input.nextElementSibling;
+
+                if (input.value == "") {
+                    errorText.innerHTML = 'This field is required';
+                }
+                if (input.type == "email") {
+                    let regex = new RegExp(String.raw`^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`);
+                    if (!regex.test(input.value)) {
+                        hasError = true || !hasError;
+                        errorText.innerHTML = 'Invalid email';
+                    }
+                }
+            }
+
+            if (!hasError) {
+                fetch('/subcription/create', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        'name': document.querySelector("#name"),
+                        'email': document.querySelector("#email"),
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }).then((response) => {
+                    return response.json();
+                }).then((jsonResponse) => {
+                    if (jsonResponse.status == "OK") {
+                        Swal.fire({
+                            title: 'success!',
+                            text: 'message',
+                            icon: 'success',
+                            confirmButtonColor: "#01A887"
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'error!',
+                            text: 'message',
+                            icon: 'error',
+                            confirmButtonColor: "#01A887"
+                        });
+                    }
+                }).catch(() => {
+                    Swal.fire({
+                        title: 'error!',
+                        text: 'message',
+                        icon: 'error',
+                        confirmButtonColor: "#01A887"
+                    });
+                })
+            }
         })
     }
 
