@@ -148,10 +148,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     window.onload = () => {
-        let hasError = true;
         const loader = document.getElementsByClassName("loading-indicator");
         loader[0].style.display = "none";
-
+        
         const inputs = document.querySelectorAll(".form-group input");
         for (let index = 0; index < inputs.length; index++) {
             const input = inputs[index];
@@ -161,15 +160,17 @@
                 errorText.innerHTML = '';
             })
         }
-
+        
         const btn = document.querySelector(".subscription-form button");
         btn.addEventListener("click", function (event) {
+            let hasError = false;
             // Sorry for the code smells, I'm in a hurry
             for (let index = 0; index < inputs.length; index++) {
                 const input = inputs[index];
                 const errorText = input.nextElementSibling;
 
                 if (input.value == "") {
+                    hasError = true || !hasError;
                     errorText.innerHTML = 'This field is required';
                 }
                 if (input.type == "email") {
